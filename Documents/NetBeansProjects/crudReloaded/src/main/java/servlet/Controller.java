@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,7 +44,8 @@ public class Controller extends HttpServlet {
                     if (resultset.next()) {
                         response.sendRedirect("/crudReloaded/faces/usuario/List.xhtml");
                     } else {
-                        System.out.println("senha errada");
+                        response.sendRedirect("/crudReloaded");
+                        JOptionPane.showMessageDialog(null, "Login ou senha inválido.");
                     }
                 }
             } catch (Exception e) {
